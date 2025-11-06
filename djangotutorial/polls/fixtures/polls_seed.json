@@ -1,0 +1,121 @@
+[
+  {
+    "model": "polls.question",
+    "pk": 2,
+    "fields": {
+      "question_text": "What was your favorite Austrian chocolate snack in the 80s?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 2, "fields": { "question": 2, "choice_text": "PEZ", "votes": 0 } },
+  { "model": "polls.choice", "pk": 3, "fields": { "question": 2, "choice_text": "Manner Schnitten", "votes": 0 } },
+  { "model": "polls.choice", "pk": 4, "fields": { "question": 2, "choice_text": "Milka", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 3,
+    "fields": {
+      "question_text": "Which 80s toy brand was your favorite?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 5, "fields": { "question": 3, "choice_text": "LEGO", "votes": 0 } },
+  { "model": "polls.choice", "pk": 6, "fields": { "question": 3, "choice_text": "Playmobil", "votes": 0 } },
+  { "model": "polls.choice", "pk": 7, "fields": { "question": 3, "choice_text": "Barbie", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 4,
+    "fields": {
+      "question_text": "Which cartoon character from the 80s did you like best?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 8, "fields": { "question": 4, "choice_text": "He-Man", "votes": 0 } },
+  { "model": "polls.choice", "pk": 9, "fields": { "question": 4, "choice_text": "The Smurfs (Schlümpfe)", "votes": 0 } },
+  { "model": "polls.choice", "pk": 10, "fields": { "question": 4, "choice_text": "Inspector Gadget", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 5,
+    "fields": {
+      "question_text": "Which kids’ TV show intro song do you still remember?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 11, "fields": { "question": 5, "choice_text": "Tom & Jerry", "votes": 0 } },
+  { "model": "polls.choice", "pk": 12, "fields": { "question": 5, "choice_text": "Die Biene Maja", "votes": 0 } },
+  { "model": "polls.choice", "pk": 13, "fields": { "question": 5, "choice_text": "Wickie und die starken Männer", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 6,
+    "fields": {
+      "question_text": "Which 80s video game brand ruled your childhood?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 14, "fields": { "question": 6, "choice_text": "Nintendo", "votes": 0 } },
+  { "model": "polls.choice", "pk": 15, "fields": { "question": 6, "choice_text": "Atari", "votes": 0 } },
+  { "model": "polls.choice", "pk": 16, "fields": { "question": 6, "choice_text": "Commodore (C64)", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 7,
+    "fields": {
+      "question_text": "Which sticker album brand was the most fun to collect?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 17, "fields": { "question": 7, "choice_text": "Panini", "votes": 0 } },
+  { "model": "polls.choice", "pk": 18, "fields": { "question": 7, "choice_text": "Disney", "votes": 0 } },
+  { "model": "polls.choice", "pk": 19, "fields": { "question": 7, "choice_text": "WWF (World Wildlife Fund)", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 8,
+    "fields": {
+      "question_text": "What was your favorite soft drink as a kid in the 80s?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 20, "fields": { "question": 8, "choice_text": "Almdudler", "votes": 0 } },
+  { "model": "polls.choice", "pk": 21, "fields": { "question": 8, "choice_text": "Fanta", "votes": 0 } },
+  { "model": "polls.choice", "pk": 22, "fields": { "question": 8, "choice_text": "Coca-Cola", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 9,
+    "fields": {
+      "question_text": "Which Austrian ice cream brand was the ultimate summer treat?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 23, "fields": { "question": 9, "choice_text": "Eskimo", "votes": 0 } },
+  { "model": "polls.choice", "pk": 24, "fields": { "question": 9, "choice_text": "Schöller", "votes": 0 } },
+  { "model": "polls.choice", "pk": 25, "fields": { "question": 9, "choice_text": "Nestlé", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 10,
+    "fields": {
+      "question_text": "Which toy line did you trade most at school?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 26, "fields": { "question": 10, "choice_text": "Masters of the Universe", "votes": 0 } },
+  { "model": "polls.choice", "pk": 27, "fields": { "question": 10, "choice_text": "Matchbox", "votes": 0 } },
+  { "model": "polls.choice", "pk": 28, "fields": { "question": 10, "choice_text": "My Little Pony", "votes": 0 } },
+
+  {
+    "model": "polls.question",
+    "pk": 11,
+    "fields": {
+      "question_text": "Which brand of school supplies brings back the most memories?",
+      "pub_date": "2025-01-01T00:00:00Z"
+    }
+  },
+  { "model": "polls.choice", "pk": 29, "fields": { "question": 11, "choice_text": "Stabilo", "votes": 0 } },
+  { "model": "polls.choice", "pk": 30, "fields": { "question": 11, "choice_text": "Pelikan", "votes": 0 } },
+  { "model": "polls.choice", "pk": 31, "fields": { "question": 11, "choice_text": "Faber-Castell", "votes": 0 } }
+]
