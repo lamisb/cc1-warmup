@@ -80,27 +80,39 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
 
     try:
-        choice_id = request.POST["choice"]
-        selected_choice = question.choice_set.get(pk=choice_id)
+        choice_ids = request.POST.getlist("choice")
+        if not choice_ids:
+            raise KeyError("No choices selected")
+        
+        # Validate that all selected choices belong to this question
+        selected_choices = question.choice_set.filter(pk__in=choice_ids)
+        if len(selected_choices) != len(choice_ids):
+            raise Choice.DoesNotExist("Invalid choice selected")
+            
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form with an error
-        messages.error(request, "You didn't select a valid choice.")  # optional
+        messages.error(request, "You didn't select any valid choices.")  # optional
         return render(
             request,
             "polls/detail.html",
             {
                 "question": question,
-                "error_message": "You didn't select a valid choice.",
+                "error_message": "You didn't select any valid choices.",
             },
         )
 
-    # Concurrency-safe increment
+    # Concurrency-safe increment for all selected choices
     with transaction.atomic():
-        Choice.objects.filter(pk=selected_choice.pk).update(votes=F("votes") + 1)
+        for choice in selected_choices:
+            Choice.objects.filter(pk=choice.pk).update(votes=F("votes") + 1)
 
     # Mark this question as voted in the session
     voted_questions.append(question.id)
     request.session["voted_questions"] = voted_questions
 
-    messages.success(request, "Thanks for voting!")  # optional
+    choice_count = len(selected_choices)
+    if choice_count == 1:
+        messages.success(request, "Thanks for voting!")
+    else:
+        messages.success(request, f"Thanks for voting! You selected {choice_count} choices.")  # optional
     return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
