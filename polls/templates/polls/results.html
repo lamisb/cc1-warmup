@@ -12,6 +12,9 @@
       <span class="badge bg-primary rounded-pill">
         {{ choice.votes }} vote{{ choice.votes|pluralize }}
       </span>
+      {% if choice.last_voted %}
+        <br><small class="text-muted">Last voted: {{ choice.last_voted|date:"F j, Y, g:i a" }}</small>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>
