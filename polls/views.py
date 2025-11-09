@@ -29,7 +29,7 @@ class IndexView(generic.ListView):
         return qs
 
     def get_context_data(self, **kwargs):
-        # Keep the search query in the context so templates can preserve it in pagination links
+        # Pass the search term to the template so it can be used in search forms and pagination
         context = super().get_context_data(**kwargs)
         context["q"] = self.request.GET.get("q", "")
         return context
@@ -105,14 +105,11 @@ def vote(request, question_id):
     with transaction.atomic():
         for choice in selected_choices:
             Choice.objects.filter(pk=choice.pk).update(votes=F("votes") + 1)
+            Choice.objects.filter(pk=choice.pk).update(last_voted=timezone.now())
 
     # Mark this question as voted in the session
     voted_questions.append(question.id)
     request.session["voted_questions"] = voted_questions
 
-    choice_count = len(selected_choices)
-    if choice_count == 1:
-        messages.success(request, "Thanks for voting!")
-    else:
-        messages.success(request, f"Thanks for voting! You selected {choice_count} choices.")  # optional
+    messages.success(request, "Thanks for voting!")  # optional
     return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
